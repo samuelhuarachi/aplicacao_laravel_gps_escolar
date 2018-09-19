@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vectoriza-gps",
+  "private_key_id": "8a28621d253c0c9973c96ef0993b8fad5813937e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFB/Pm97XIaknR\nHONY2MDNlKusGZujli0RR3UPCawaU4o2OaFw5jzsL8e82NMOhRufH20L3QyO+6mL\nOOLOSLPYEn/pmAQibEvBfDjMjYuoxXMCXuFy26a3aTuydQAtmnvu/pZ/MKx8HqCD\nlbYigoT6QC9TZzkvZ4l8fZCcIsIicl1F2CzwbJFpX1OIcs/vaTai1OwHrr0mTuFa\n+6ejLZt0At4axsDovmIVtGJI6VeAPPTV0afxTwWs/9KS34d//t5bbPogd7iJc91W\n4vBsUl1xkwJ2E6NCSNNYoAi0hLz11LjL3PQKsPxQYcciNuXwnXxcwROVi8Xrkk2c\n8+PjuvcxAgMBAAECggEABOJIFPMR8fhUgRb2ubaRvObRBJCT74+i6Vk8mRVTy0lD\n1UlDa7GBVBdxG4jCXotFHoIgaVle3NJ3JujPkm5x6sq2mfs3KwVFMXQbUlK14gaW\n7bmdXAP+03AL10YYLYk1RjzQTTHPLLpznx9gZuWWVz+tDKOz4q1t1oSkR4KDDmh9\nLOCjviDA7mzIysQDkJVAVLGel9OGyV6eT+1jLla0z2z4h8kST2zvIRpXsjIhIwoT\nVK4JG96Czgx7iUKBPYEjAxLmXeTIuLnNewn4VwQiYtbA0boAgLMS4z7GSHa+UK1M\nCC9dcQl7mCcBPDSKI5TIhz9B7kPuCd94JB4PfFo9mwKBgQDnH5GamD8xv6ZRMp1h\n3jhanaiQYUBV+LoGawsQy1LcFTfLh9/w6EL16vYvQU3RFvDwYI7QRyoU+F2e641f\nP5cBDrCTvgO7vmhPZ+Xwbq7tlLw99fZkd/6J8j02dNHcTZEpZhuGsaMU+JBi5HK1\nHvPh0YzhtNju3DJkowJShZK5gwKBgQDaPP9Sy3Pibpf14Mb1a0fhdzH8ZbkU2vEs\nKofbCu4voVRWdBPJ20DKom9HquUk/viYeINAAI/V6Apadek0TjbGBcHEavBiWzu+\nVnOumWrMw66O2GQfjmUkPOpDR6cX53BIK8ehws6coCJ83tsQuyPLjGtmqm6OmeRw\nQEZBK3USOwKBgCShgT9CUAm/eUm3PvBq+v2JrVSsxTibAkjQIGHaB9jv1/b/IwQY\nm7xEMB6POBkijK9cbmYeUVIfhx8P8EkfV/yH6n6QCCFybS/gpLX1pO3su+UKHbIQ\nvpv4c7E01KoY9R/dmhFACDvjpWa3FGMWc8rfnneLZTJ+XdJLb6vKldWnAoGBAMs/\nIZ6PIjbQPq/cDg9EQWZmpuPkLLGSkidK2MmT7W3odu4pHsDQdBADpVV+f/erigQd\nwEab/1j8yJ+kznJLIVHczK/L1GIVi5dhVk1WThOzbl9UgjKtX96W6KmOErz9ayGb\nvEkXb2qI7HWU6zoyv0xzUxcDRQGDqy8rfQJ2oYo/AoGAEaLDhVZjeL5FiPtIAXSW\nEtbvSgeeIrur9bk+GTEANpxpU3hecRmeoVnR6xTPNafDlw/MiFG+WJ8Mq2C9imOJ\nyZdraAtxrl6HnTbfVy8EN/pUW3vn7fC7QuElTOmUJPUe/3mGJHdoAKsJVjAnWxiw\nYEZIevxgGPS2TYhxo5E0TuA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "vectoriza-gps@appspot.gserviceaccount.com",
+  "client_id": "109430028407794863139",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vectoriza-gps%40appspot.gserviceaccount.com"
+}

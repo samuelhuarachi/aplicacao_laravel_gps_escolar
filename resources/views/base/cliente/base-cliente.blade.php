@@ -11,7 +11,7 @@
         <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">
             body {
-                background: #fffff5;
+                background: #fff;
                 font-size: 14px;
             }
 
