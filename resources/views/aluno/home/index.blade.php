@@ -1,4 +1,4 @@
-@extends('base.cliente.base-cliente')
+@extends('base.aluno.base')
 
 @section('content')
 

@@ -18,14 +18,15 @@ class CreateStudentsTable extends Migration
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients');
             $table->string('username')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('password');
+            $table->rememberToken();
             $table->string('name');
             $table->string('lastname')->default('');
             $table->integer('age')->default(0);
             $table->string('gender')->default('');
             $table->string('phone')->default('');
             $table->string('cell_phone')->default('');
-            $table->string('email')->default('');
             $table->string('street')->default('');
             $table->string('number')->default('');
             $table->string('complement')->default('');

@@ -21,7 +21,7 @@ class StudentsTableSeeder extends Seeder
             DB::table('students')->insert([
                 'client_id' => 1,
                 'username' => $faker->username,
-                'password' => bcrypt('123'),
+                'password' => bcrypt('123abc'),
                 'name' => $faker->firstNameFemale,
                 'lastname' => $faker->lastName,
                 'age' => $faker->numberBetween(3,17),

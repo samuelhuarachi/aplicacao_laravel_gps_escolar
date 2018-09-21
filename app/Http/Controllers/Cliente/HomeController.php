@@ -4,23 +4,13 @@ namespace App\Http\Controllers\Cliente;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Firebase\CustomToken;
 
 class HomeController extends Controller
 {
     
-    public function index(CustomToken $customToken)
+    public function index()
     {
-
-        // $reference = $database->getReference('gps/-LMQDNwUboUGHl0t4F5D');
-        // $snapshot = $reference->getSnapshot();
-        // $value = $snapshot->getValue();
-        // dump($value);die;
-
-        // da pra cachear esse token
-        $token = $customToken->generate("samuel@gmail.com");
-        
-        return view('area-cliente.home.index', compact('token'));
+        return view('admin.home.index');
     }
 
 }

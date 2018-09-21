@@ -51,7 +51,7 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ route('area-cliente.index') }}"><span class="glyphicon glyphicon-user"></span> ÁREA DO CLIENTE</a></li>
+                            <li><a href="{{ route('student.index') }}"><span class="glyphicon glyphicon-user"></span> ÁREA DO ALUNO</a></li>
                         </ul>
                         </div>
                     </div>

@@ -23,12 +23,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> MINHA CONTA</a></li>
                     <li>
-                        <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+                        <a href="{{ route('student.logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="dropdown-item">
                             <span class="glyphicon glyphicon-log-out"></span> {{ __('SAIR') }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form" action="{{ route('student.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                     </li>
