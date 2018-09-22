@@ -21,5 +21,15 @@ class UsersTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:m:i'),
             'updated_at' => date('Y-m-d H:m:i')
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Delminha',
+            'lastname' => 'Regina Gomes Huarachi',
+            'email' => 'delminha.007@gmail.com',
+            'phone' => '(19) 3208-1282',
+            'password' => bcrypt('sempre'),
+            'created_at' => date('Y-m-d H:m:i'),
+            'updated_at' => date('Y-m-d H:m:i')
+        ]);
     }
 }
