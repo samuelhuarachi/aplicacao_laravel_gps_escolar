@@ -14,6 +14,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        
+        DB::update("SET @@auto_increment_increment=1");
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
