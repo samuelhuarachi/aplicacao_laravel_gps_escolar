@@ -1,4 +1,4 @@
-@extends('base.cliente.base-cliente')
+@extends('base.aluno.base')
 
 @section('content')
 <div class="container">
@@ -6,11 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h2>{{ __('Login') }}</h2>
+                    <h2>{{ __('Área do Aluno') }}</h2>
                 </div>
-
                 <div class="card-body">
-                    <h3>Student Login</h3>
                     <form method="POST" action="{{ route('student.login.submit') }}">
                         @csrf
                         <div class="form-group row">

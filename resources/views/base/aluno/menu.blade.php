@@ -7,7 +7,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-                @guest
+                @guest('student')
                     <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> VOLTAR</a></li>
                 @else
                     <li class="active">
@@ -17,7 +17,7 @@
                     <!-- <li><a>Seja bem vindo(a) {{ Auth::user()->name }}</a></li> -->
                 @endguest
             </ul>
-            @guest
+            @guest('student')
 
             @else
                 <ul class="nav navbar-nav navbar-right">

@@ -10,10 +10,10 @@
                 @guest
                     <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> VOLTAR</a></li>
                 @else
-                    <li class="active">
-                    <a href="{{ route('admin.index') }}">
-                    <span class="glyphicon glyphicon-screenshot"></span> VAN GPS <span class="sr-only">(current)</span>
-                    </a></li>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Veículo(s)</a></li>
+                    <li><a href="#">Alunos</a></li>
+                    <li><a href="#">Turnos</a></li>
                     <!-- <li><a>Seja bem vindo(a) {{ Auth::user()->name }}</a></li> -->
                 @endguest
             </ul>

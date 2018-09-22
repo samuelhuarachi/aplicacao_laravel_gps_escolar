@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Samuel',
             'lastname' => 'Gomes Huarachi',
             'email' => 'samuel.huarachi@gmail.com',
+            'phone' => '(19) 3208-1282',
             'password' => bcrypt('sempre'),
             'created_at' => date('Y-m-d H:m:i'),
             'updated_at' => date('Y-m-d H:m:i')

@@ -19,7 +19,7 @@ class StudentsTableSeeder extends Seeder
         
         while($i <= 30) {
             DB::table('students')->insert([
-                'client_id' => 1,
+                'user_id' => 1,
                 'username' => $faker->username,
                 'password' => bcrypt('123abc'),
                 'name' => $faker->firstNameFemale,

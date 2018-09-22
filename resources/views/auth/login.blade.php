@@ -1,4 +1,4 @@
-@extends('base.cliente.base-cliente')
+@extends('base.cliente.base')
 
 @section('content')
 <div class="container">

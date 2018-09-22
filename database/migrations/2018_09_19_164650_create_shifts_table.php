@@ -15,6 +15,8 @@ class CreateShiftsTable extends Migration
     {
         Schema::create('shifts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('vehicle_id')->unsigned();
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->string('name');
             $table->boolean('active')->default(false);
             $table->string('annotation')->default('');
