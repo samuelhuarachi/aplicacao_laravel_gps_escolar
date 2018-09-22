@@ -19,6 +19,8 @@ class HomeController extends Controller
         $student = $studentService->current();
         $vehicle = $studentService->findVehicle($student);
 
+        dump($vehicle);die;
+
         // $reference = $database->getReference('gps/-LMQDNwUboUGHl0t4F5D');
         // $snapshot = $reference->getSnapshot();
         // $value = $snapshot->getValue();
