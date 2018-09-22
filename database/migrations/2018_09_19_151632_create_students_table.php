@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -14,7 +15,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id', 1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('username')->unique();
@@ -50,6 +51,8 @@ class CreateStudentsTable extends Migration
             $table->double('lng', 8, 6)->default(0);
             $table->timestamps();
         });
+
+        DB::update("ALTER TABLE students AUTO_INCREMENT = 1;");
     }
 
     /**
