@@ -11,7 +11,10 @@ use App\Services\Student\StudentService;
 class HomeController extends Controller
 {
     
-    public function index(CustomToken $customToken, StudentService $studentService)
+    public function index(
+        CustomToken $customToken, 
+        StudentService $studentService
+    )
     {
         $student = $studentService->current();
         $vehicle = $studentService->findVehicle($student);
@@ -21,6 +24,7 @@ class HomeController extends Controller
         // $value = $snapshot->getValue();
         // dump($value);die;
 
+        $token = null;
         if ($vehicle) {
             // da pra cachear esse token
             $token = $customToken->generate($student->username);
