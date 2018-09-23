@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 class UsersTableSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -19,7 +20,8 @@ class UsersTableSeeder extends Seeder
             'phone' => '(19) 3208-1282',
             'password' => bcrypt('sempre'),
             'created_at' => date('Y-m-d H:m:i'),
-            'updated_at' => date('Y-m-d H:m:i')
+            'updated_at' => date('Y-m-d H:m:i'),
+            'token' => md5(uniqid(rand(), true))
         ]);
 
         DB::table('users')->insert([
@@ -29,7 +31,8 @@ class UsersTableSeeder extends Seeder
             'phone' => '(19) 3208-1282',
             'password' => bcrypt('sempre'),
             'created_at' => date('Y-m-d H:m:i'),
-            'updated_at' => date('Y-m-d H:m:i')
+            'updated_at' => date('Y-m-d H:m:i'),
+            'token' => md5(uniqid(rand(), true))
         ]);
     }
 }

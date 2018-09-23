@@ -14,6 +14,7 @@ class DriversTableSeeder extends Seeder
     public function run()
     {
         DB::table('drivers')->insert([
+            'user_id' => 1,
             'username' => 'driver1',
             'password' => bcrypt('123abc'),
             'name' => 'Reginaldo',
@@ -24,6 +25,7 @@ class DriversTableSeeder extends Seeder
         ]);
 
         DB::table('drivers')->insert([
+            'user_id' => 1,
             'username' => 'driver2',
             'password' => bcrypt('123abc'),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
