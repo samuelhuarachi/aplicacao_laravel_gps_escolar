@@ -15,6 +15,9 @@
             {!! Form::text('rg', null,
                 array('class' => 'form-control', 'id' => 'rgInput')) !!}
         </div>
+        <br>
+        <br>
+        <p>O usuário e senha abaixo, serão utilizados para fazer o login no aplicativo.</p>
         <div class="form-group">
             <label class="control-label" for="usernameInput">Username</label>
             {!! Form::text('username', null,

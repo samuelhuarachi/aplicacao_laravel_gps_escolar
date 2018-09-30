@@ -9,6 +9,7 @@ use App\Firebase\Firebase;
 use App\Model\Vehicle;
 use App\User;
 use Illuminate\Support\Facades\Gate;
+use App\Http\Requests\VehicleRequest;
 
 class VehicleController extends Controller
 {
@@ -20,7 +21,7 @@ class VehicleController extends Controller
     }
 
     public function new(
-        Request $request,
+        VehicleRequest $request,
         Firebase $firebase,
         Vehicle $vechicle,
         User $user
@@ -53,11 +54,15 @@ class VehicleController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-
+        
         return redirect()->route('admin.vehicle.index');
     }
 
-    public function newDriver($id, User $user, Vehicle $vehicle)
+    public function newDriver(
+        $id, 
+        User $user, 
+        Vehicle $vehicle
+    )
     {
         $vehicleFind = $vehicle->find($id);
         if (!$vehicleFind) {
