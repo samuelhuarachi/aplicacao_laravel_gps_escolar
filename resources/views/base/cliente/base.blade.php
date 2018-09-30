@@ -9,6 +9,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuiWPnJFhJPafTTA6sta2OqeH4WJHlRAA"></script>
 
         <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <style type="text/css">
             body {
                 background: #fff;
@@ -69,11 +70,7 @@
 
         @include('base.cliente.menu')
         
-        <div class="container">
-            <div class="row">
-                @yield('content')
-            </div>
-        </div>
+        @yield('content')
 
         <footer class="footer">
             <div class="container">

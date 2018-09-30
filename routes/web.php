@@ -11,6 +11,19 @@ Route::group(['prefix' => '/admin'],
         Route::group(['middleware' => 'auth'], function () {
             Route::get('', ['as' => 'admin.index', 
                 'uses' => 'Cliente\HomeController@index']);
+
+            Route::group(['prefix' => '/vehicles'], function () {
+                Route::get('', ['as' => 'admin.vehicle.index', 
+                    'uses' => 'Cliente\VehicleController@index']);
+
+                Route::post('', ['as' => 'admin.vehicle.new', 
+                    'uses' => 'Cliente\VehicleController@new']);
+                
+                Route::get('{id}/driver/add', [   
+                    'as' => 'admin.vehicle.driver.new', 
+                    'uses' => 'Cliente\VehicleController@newDriver'
+                ]);
+            });
         });
         
 });

@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
-    
+    protected $fillable = [
+        'placa', 'firebasegps', 'created_at', 'updated_at'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     public function shifts() {
         return $this->hasMany('App\Model\Shift');
     }
