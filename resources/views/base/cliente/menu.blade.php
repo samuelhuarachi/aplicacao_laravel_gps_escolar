@@ -11,8 +11,10 @@
                     <li><a href="/"><span class="glyphicon glyphicon-arrow-left"></span> VOLTAR</a></li>
                 @else
                     <li><a href="{{ route('admin.index') }}"><i class="fas fa-chalkboard"></i> DASHBOARD</a></li>
+                    <li><a href="{{ route('admin.student.index') }}"><i class="fas fa-user-graduate"></i> ALUNOS</a></li>
                     <li><a href="{{ route('admin.vehicle.index') }}"><i class="fas fa-bus-alt"></i> VEÍCULOS</a></li>
-                    <li><a href="#"><i class="fas fa-user-graduate"></i> ALUNOS</a></li>
+                    <li><a href="{{ route('admin.driver.index') }}"><i class="far fa-id-card"></i> CONDUTORES</a></li>
+                    
                     <!-- <li><a>Seja bem vindo(a) {{ Auth::user()->name }}</a></li> -->
                 @endguest
             </ul>

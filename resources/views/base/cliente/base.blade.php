@@ -45,6 +45,7 @@
                 /* Margin bottom by footer height */
                 margin-bottom: 60px;
                 line-height: 1.246;
+                background: #f5f5f5;
             }
             .footer {
             position: absolute;
@@ -64,7 +65,11 @@
             .navbar-toggle {
                 color: #fff;
             }
-
+            
+            textarea, textarea.form-control, input.form-control, input[type="text"], input[type="password"], input[type="email"], input[type="number"], [type="text"].form-control, [type="password"].form-control, [type="email"].form-control, [type="tel"].form-control, [contenteditable].form-control {
+                background: #fff;
+                padding-left: 5px !important;
+            }
         </style>
     </head>
     <body>

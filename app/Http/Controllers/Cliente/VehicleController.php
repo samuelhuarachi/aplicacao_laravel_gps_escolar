@@ -2,18 +2,30 @@
 
 namespace App\Http\Controllers\Cliente;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Services\User\UserService;
-use App\Firebase\Firebase;
-use App\Model\Vehicle;
 use App\User;
+use App\Model\Shift;
+use App\Model\Driver;
+use App\Model\Vehicle;
+use App\Firebase\Firebase;
+use Illuminate\Http\Request;
+use App\Services\User\UserService;
+use App\Http\Requests\ShiftRequest;
+use App\Http\Controllers\Controller;
+use App\Services\Shift\ShiftService;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\VehicleRequest;
+use App\Services\Vehicle\VehicleService;
 
 class VehicleController extends Controller
 {
     
+    protected $vehicleService;
+
+    public function __construct(VehicleService $vehicleService)
+    {
+        $this->vehicleService = $vehicleService;
+    }
+
     public function index(UserService $userService)
     {
         $user = $userService->getCurrent();
@@ -77,4 +89,91 @@ class VehicleController extends Controller
         return view('admin.vehicle.driver.add', 
             compact('user', 'vehicleFind'));
     }
-}
+
+    public function attachDriver(
+        Vehicle $vehicle,
+        Driver $driver,
+        UserService $userService
+    )
+    {
+        if (!Gate::allows('vehicle-attach-driver', 
+            [$vehicle, $driver, $userService->getCurrent()])) {
+                throw new \Exception("Você não está autorizado a visualizar esta página");
+        } else {
+
+            if (!$vehicle->drivers->contains($driver->id)) {
+                $vehicle->drivers()->attach($driver);
+                $vehicle->save();
+            }
+
+            return redirect()->route('admin.vehicle.index');
+        }
+    }
+
+    public function detachDriver(
+        Vehicle $vehicle,
+        Driver $driver,
+        UserService $userService
+    )
+    {
+        if (!Gate::allows('vehicle-attach-driver', 
+            [$vehicle, $driver, $userService->getCurrent()])) {
+                throw new \Exception("Você não está autorizado a visualizar esta página");
+        } else {
+
+            if ($vehicle->drivers->contains($driver->id)) {
+                echo 'ok';
+                $vehicle->drivers()->detach($driver);
+                $vehicle->save();
+            }
+
+            return redirect()->route('admin.vehicle.index');
+        }
+    }
+
+    public function addShift(
+        Vehicle $vehicle,
+        UserService $userService
+    )
+    {
+        
+
+        return view('admin.vehicle.shift.add', 
+            compact('vehicle', 'userService'));
+    }
+
+    public function newShift(
+        ShiftRequest $request, 
+        ShiftService $shiftService
+    )
+    {
+
+        $shiftService->new($request->all());
+        return redirect()->route('admin.vehicle.index');
+    }
+
+    public function deleteShift(
+        Vehicle $vehicle,
+        Shift $shift
+    )
+    {
+        $this->vehicleService->deleteShift($vehicle, $shift);
+        return redirect()->route('admin.vehicle.index');
+    }
+
+    public function editShift(Shift $shift)
+    {
+
+        return view('admin.vehicle.shift.edit', compact('shift'));
+    }
+
+    public function updateShift(
+        ShiftRequest $request,
+        ShiftService $shiftService)
+    {
+        $shiftService->update($request->all());
+        $data = $request->all();
+
+        return redirect()->route('admin.vehicle.shift.edit', $data["id"]);
+    }
+} 

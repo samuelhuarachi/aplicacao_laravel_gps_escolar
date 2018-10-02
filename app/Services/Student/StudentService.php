@@ -5,15 +5,23 @@ namespace App\Services\Student;
 use Auth;
 use App\Model\Student;
 use Illuminate\Support\Carbon;
+use App\Services\User\UserService;
 use App\Services\Config\ConfigService;
 
 class StudentService
 {
     protected $config;
+    protected $userService;
+    protected $mStudent;
 
-    public function __construct(ConfigService $config)
+    public function __construct(
+        ConfigService $config,
+        UserService $userService,
+        Student $student)
     {
         $this->config = $config;
+        $this->userService = $userService;
+        $this->mStudent = $student;
     }
 
     public function current()
@@ -57,5 +65,17 @@ class StudentService
         }
 
         return null;
+    }
+
+    public function add($data)
+    {
+        $user = $this->userService->getCurrent();
+
+        unset($data["_token"]);
+        $data["user_id"] = $user->id;
+        $data["created_at"] = date("Y-m-d H:i:s");
+        $data["updated_at"] = date("Y-m-d H:i:s");
+
+        $this->mStudent->insert($data);
     }
 }

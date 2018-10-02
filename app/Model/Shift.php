@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shift extends Model
 {
+    protected $fillable = [
+        'vehicle_id', 'name', 'annotation', 'active',
+        'start_at', 'finish_at', 'created_at', 'updated_at'
+    ];
     
     public function students()
     {

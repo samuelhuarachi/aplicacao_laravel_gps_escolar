@@ -19,7 +19,7 @@ class CreateShiftsTable extends Migration
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->string('name');
             $table->boolean('active')->default(false);
-            $table->string('annotation')->default('');
+            $table->string('annotation')->nullable();
             $table->string('start_at');
             $table->string('finish_at');
             $table->timestamps();

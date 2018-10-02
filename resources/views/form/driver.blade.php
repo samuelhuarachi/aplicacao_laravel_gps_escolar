@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label class="control-label" for="passwordInput">Senha</label>
-            {!! Form::text('password', null,
+            {!! Form::password('password',
                 array('class' => 'form-control', 'id' => 'passwordInput')) !!}
         </div>
         <button type="submit" class="btn btn-primary">ADICIONAR NOVO</button>

@@ -28,5 +28,14 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('user-vehicle', function ($user, $vehicle) {
             return $user->id == $vehicle->user_id;
         });
+        
+        Gate::define('vehicle-attach-driver', 
+            function ($user, $vehicle, $driver) {
+                return ($user->id == $vehicle->user_id && $user->id == $driver->user_id);
+            });
+
+        Gate::define('vehicle-shift', function ($user, $vehicle, $shift) {
+            return $shift->vehicle_id == $vehicle->id;
+        });
     }
 }
