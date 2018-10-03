@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Hash;
 class DriverController extends Controller
 {
     
-
     public function index(UserService $userService, Driver $driver)
     {
         $user = $userService->getCurrent();

@@ -16,7 +16,13 @@ class Shift extends Model
         return $this->belongsToMany('App\Model\Student');
     }
 
-    public function vehicle() {
+    public function vehicle() 
+    {
         return $this->belongsTo('App\Model\Vehicle');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

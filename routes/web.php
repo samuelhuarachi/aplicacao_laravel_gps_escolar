@@ -4,7 +4,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => '/admin'], 
+
+Route::get('pagseguro/redirect', ['as' => 'pagseguro.redirect', 
+        'uses' => 'Cliente\Pagseguro@redirect']);
+
+Route::post('pagseguro/notification', ['as' => 'pagseguro.notification', 
+        'uses' => 'Cliente\Pagseguro@notification']);
+
+Route::group(['prefix' => '/admin'],
     function() {
         Route::post('logout', 'Auth\LoginController@userLogout')->name('admin.logout');
 
@@ -72,7 +79,7 @@ Route::group(['prefix' => '/admin'],
                     Route::get('add', ['as' => 'admin.driver.add', 
                         'uses' => 'Cliente\DriverController@add']);
 
-                    Route::post('', ['as' => 'admin.vehicle.new', 
+                    Route::post('', ['as' => 'admin.driver.new', 
                         'uses' => 'Cliente\DriverController@new']);
                         
             });

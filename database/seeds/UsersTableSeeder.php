@@ -13,6 +13,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create('pt_BR');
+
         DB::table('users')->insert([
             'name' => 'Samuel',
             'lastname' => 'Gomes Huarachi',
@@ -21,7 +23,10 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('sempre'),
             'created_at' => date('Y-m-d H:m:i'),
             'updated_at' => date('Y-m-d H:m:i'),
-            'token' => md5(uniqid(rand(), true))
+            'token' => md5(uniqid(rand(), true)),
+            'cpf' => $faker->cpf,
+            'payment' => 10,
+            'period' => 30
         ]);
 
         DB::table('users')->insert([
@@ -32,7 +37,10 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('sempre'),
             'created_at' => date('Y-m-d H:m:i'),
             'updated_at' => date('Y-m-d H:m:i'),
-            'token' => md5(uniqid(rand(), true))
+            'token' => md5(uniqid(rand(), true)),
+            'cpf' => $faker->cpf,
+            'payment' => 10,
+            'period' => 30
         ]);
     }
 }

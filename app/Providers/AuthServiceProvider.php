@@ -37,5 +37,20 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('vehicle-shift', function ($user, $vehicle, $shift) {
             return $shift->vehicle_id == $vehicle->id;
         });
+
+        Gate::define('user-students', function ($user, $student, $array) {
+            foreach($array as $value) {
+                $studentF = $student->find((int)$value);
+                
+                if (!$studentF) {
+                    throw new \Exception("Aluno não encontrado");
+                }
+                
+                if ($studentF->user_id != $user->id) {
+                    return false;
+                }
+            }
+            return true;
+        });
     }
 }

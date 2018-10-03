@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h2>{{ __('Login') }}</h2>
@@ -66,6 +66,10 @@
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="col-md-6">
+            <h2>{{ __('Novo por aqui?') }}</h2>
+            <a href="/register" class="btn btn-default">Clique aqui para registrar-se</a>
         </div>
     </div>
 </div>

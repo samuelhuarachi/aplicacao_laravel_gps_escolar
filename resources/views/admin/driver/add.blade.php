@@ -9,7 +9,7 @@
             
             <h3>Novo Condutor</h3>
             <br>
-            {!! Form::open(['route' => 'admin.vehicle.new', 'class' => 'form', 'method' => 'post']) !!}
+            {!! Form::open(['route' => 'admin.driver.new', 'class' => 'form', 'method' => 'post']) !!}
                 @include('form.driver')
             {!! Form::close() !!}
         </div>

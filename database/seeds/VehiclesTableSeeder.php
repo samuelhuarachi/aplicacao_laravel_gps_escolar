@@ -18,7 +18,9 @@ class VehiclesTableSeeder extends Seeder
             'placa' => 'EDF-7508',
             'firebasegps' => '-LMQDNwUboUGHl0t4F5D',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'active' => true,
+            'last_payment' => date("Y-m-d H:i:s", strtotime('-1 month', strtotime(date("Y-m-10 00:00:00"))))
         ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Cliente;
 use App\User;
 use App\Model\Shift;
 use App\Model\Driver;
+use App\Model\Student;
 use App\Model\Vehicle;
 use App\Firebase\Firebase;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Controller;
 use App\Services\Shift\ShiftService;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Requests\VehicleRequest;
+use Illuminate\Support\Facades\Session;
 use App\Services\Vehicle\VehicleService;
 
 class VehicleController extends Controller
@@ -161,18 +163,25 @@ class VehicleController extends Controller
         return redirect()->route('admin.vehicle.index');
     }
 
-    public function editShift(Shift $shift)
+    public function editShift(
+        Shift $shift, 
+        UserService $userService)
     {
+        $user = $userService->getCurrent();
 
-        return view('admin.vehicle.shift.edit', compact('shift'));
+        return view('admin.vehicle.shift.edit', 
+            compact('shift', 'user'));
     }
 
     public function updateShift(
         ShiftRequest $request,
-        ShiftService $shiftService)
+        ShiftService $shiftService,
+        Session $session)
     {
         $shiftService->update($request->all());
         $data = $request->all();
+
+        $session::flash('flash_message','Atualizado.');
 
         return redirect()->route('admin.vehicle.shift.edit', $data["id"]);
     }

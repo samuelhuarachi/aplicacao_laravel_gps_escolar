@@ -67,7 +67,7 @@
                                                     <td><a href="{{ route('admin.vehicle.shift.edit', $shift->id) }}">{{ $shift->name }} ({{ substr($shift->start_at, 0, -3) }} - {{ substr($shift->finish_at, 0, -3) }})</a></td>
                                                     <td class="text-center">{{ count($shift->students) }}</td>
                                                     <td class="text-center">
-                                                        <a onclick="return confirm('Tem certeza que deseja desanexar esse condutor?')" href="{{ route('admin.vehicle.shift.delete', [$vehicle->id, $shift->id]) }}"><i class="fas fa-times"></i></a>
+                                                        <a onclick="return confirm('Tem certeza que deseja excluir esse turno?')" href="{{ route('admin.vehicle.shift.delete', [$vehicle->id, $shift->id]) }}"><i class="fas fa-times"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

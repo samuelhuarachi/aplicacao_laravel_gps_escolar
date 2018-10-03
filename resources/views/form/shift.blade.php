@@ -23,7 +23,5 @@
             {!! Form::text('finish_at', null, 
                 array('class' => 'form-control time', 'id' => 'finishInput')) !!}
         </div>
-        
-        <button type="submit" class="btn btn-primary">ADICIONAR NOVO</button>
     </div>
 </div>

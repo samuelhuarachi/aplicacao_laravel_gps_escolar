@@ -4,6 +4,7 @@ namespace App\Services\Shift;
 
 use Auth;
 use App\Model\Shift;
+use App\Model\Student;
 use App\Model\Vehicle;
 use Illuminate\Support\Carbon;
 use App\Services\User\UserService;
@@ -13,17 +14,23 @@ use App\Services\Config\ConfigService;
 class ShiftService
 {
 
-    protected $mShift, $mVehicle, $userService;
+    protected 
+    $mShift, 
+    $mVehicle, 
+    $mStudent,
+    $userService;
 
     public function __construct(
         Shift $shift, 
         Vehicle $vehicle, 
-        UserService $userService
+        UserService $userService,
+        Student $student
     )
     {
         $this->mShift = $shift;
         $this->mVehicle = $vehicle;
         $this->userService = $userService;
+        $this->mStudent = $student;
     }
 
     public function new($data)
@@ -75,6 +82,13 @@ class ShiftService
             [$shift->vehicle, $this->userService->getCurrent()])) {
                 throw new \Exception("Você não está autorizado a visualizar esta página");
         }
+
+        if (!Gate::allows('user-students', 
+            [$this->mStudent, $data["student_id"]])) {
+                throw new \Exception("Você não está autorizado a visualizar esta página");
+        }
+
+        $shift->students()->sync($data["student_id"]);
         
         unset($data['_token']);
         unset($data['_method']);

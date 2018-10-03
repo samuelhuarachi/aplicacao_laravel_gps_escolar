@@ -25,7 +25,8 @@ class ShiftRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'start_at' => 'required|date_format:H:i'
+            'start_at' => 'required|date_format:H:i',
+            'finish_at' => 'required|date_format:H:i'
         ];
     }
 }

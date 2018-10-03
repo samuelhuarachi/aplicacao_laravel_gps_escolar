@@ -12,6 +12,7 @@
             {!! Form::open(['route' => 'admin.vehicle.shift.new', 'class' => 'form', 'method' => 'post']) !!}
                 {{ Form::hidden('vehicle_id', $vehicle->id) }}
                 @include('form.shift')
+                <button type="submit" class="btn btn-primary">ADICIONAR NOVO</button>
             {!! Form::close() !!}
 
         </div>

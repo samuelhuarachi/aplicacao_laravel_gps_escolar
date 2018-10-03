@@ -9,11 +9,12 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     
-    public function index(User $user)
+    public function index(
+        User $user)
     {
         $user = $user->current();
 
-        return view('admin.home.index');
+        return view('admin.home.index', compact('user'));
     }
 
 }

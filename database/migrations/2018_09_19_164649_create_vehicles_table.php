@@ -19,6 +19,9 @@ class CreateVehiclesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('placa')->default('');
             $table->string('firebasegps')->default('');
+            $table->boolean('active')->default(true);
+            $table->timestamp('close_at')->nullable();
+            $table->timestamp('last_payment')->nullable();
             $table->timestamps();
         });
     }
