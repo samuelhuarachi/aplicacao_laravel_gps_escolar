@@ -104,5 +104,4 @@ class ShiftService
 
         $shift->update($data);
     }
-
 }

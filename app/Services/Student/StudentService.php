@@ -6,6 +6,7 @@ use Auth;
 use App\Model\Student;
 use Illuminate\Support\Carbon;
 use App\Services\User\UserService;
+use Illuminate\Support\Facades\Hash;
 use App\Services\Config\ConfigService;
 
 class StudentService
@@ -75,6 +76,7 @@ class StudentService
         $data["user_id"] = $user->id;
         $data["created_at"] = date("Y-m-d H:i:s");
         $data["updated_at"] = date("Y-m-d H:i:s");
+        $data["password"] = Hash::make($data["password"]);
 
         $this->mStudent->insert($data);
     }

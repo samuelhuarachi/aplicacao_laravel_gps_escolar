@@ -35,7 +35,11 @@ class User extends Authenticatable
     }
 
     public function vehicles() {
-        return $this->hasMany('App\Model\Vehicle');
+        return $this->hasMany('App\Model\Vehicle')->where('active', '=', true);
+    }
+
+    public function deletedVehicles() {
+        return $this->hasMany('App\Model\Vehicle')->where('active', '=', false);
     }
 
     public function drivers() {

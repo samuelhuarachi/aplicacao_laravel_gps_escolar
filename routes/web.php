@@ -69,6 +69,21 @@ Route::group(['prefix' => '/admin'],
                     'as'   => 'admin.vehicle.shift.update', 
                     'uses' => 'Cliente\VehicleController@updateShift'
                 ]);
+
+                Route::get('{vehicle}/edit', [
+                    'as'   => 'admin.vehicle.edit', 
+                    'uses' => 'Cliente\VehicleController@edit'
+                ]);
+
+                Route::put('update', [
+                    'as'   => 'admin.vehicle.update', 
+                    'uses' => 'Cliente\VehicleController@update'
+                ]);
+
+                Route::get('{vehicle}/delete', [
+                    'as'   => 'admin.vehicle.delete', 
+                    'uses' => 'Cliente\VehicleController@delete'
+                ]);
             });
             
             // *** DRIVERS

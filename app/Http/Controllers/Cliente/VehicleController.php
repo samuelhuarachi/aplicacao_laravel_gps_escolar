@@ -84,7 +84,7 @@ class VehicleController extends Controller
         }
 
         if (!Gate::allows('user-vehicle', 
-            [$vehicleFind, $user->current()])) {
+            [$vehicleFind])) {
                 throw new \Exception("Você não está autorizado a visualizar esta página");
         }
 
@@ -179,10 +179,47 @@ class VehicleController extends Controller
         Session $session)
     {
         $shiftService->update($request->all());
-        $data = $request->all();
 
         $session::flash('flash_message','Atualizado.');
 
-        return redirect()->route('admin.vehicle.shift.edit', $data["id"]);
+        return redirect()->route('admin.vehicle.index');
+    }
+
+    public function edit(Vehicle $vehicle)
+    {
+        if (!Gate::allows('user-vehicle', 
+            [$vehicle])) {
+                throw new \Exception("Você não está autorizado a visualizar esta página");
+        }
+
+        return view('admin.vehicle.edit', 
+            compact('vehicle'));
+    }
+
+    public function update(
+        VehicleRequest $request,
+        VehicleService $vehicleService,
+        Session $session)
+    {
+        $vehicleService->update($request->all());
+
+        $session::flash('flash_message','Atualizado.');
+        return redirect()->route('admin.vehicle.index');
+    }
+
+    public function delete(
+        Vehicle $vehicle,
+        VehicleService $vehicleService,
+        Session $session)
+    {
+        if (!Gate::allows('user-vehicle', 
+            [$vehicle])) {
+                throw new \Exception("Você não está autorizado a visualizar esta página");
+        }
+
+        $vehicleService->delete($vehicle);
+
+        $session::flash('flash_message','Deletado.');
+        return redirect()->route('admin.vehicle.index');
     }
 } 
