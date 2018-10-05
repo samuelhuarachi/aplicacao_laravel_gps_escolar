@@ -110,6 +110,13 @@ Route::group(['prefix' => '/admin'],
                 Route::post('add', ['as' => 'admin.student.new', 
                     'uses' => 'Cliente\StudentController@new']);
             });
+
+            // *** FINANCEIRO
+            Route::group(['prefix' => 'billing'], function () {
+                Route::get('', ['as' => 'admin.billing.index', 
+                    'uses' => 'Cliente\BillingController@index']);
+
+            });
         });
         
 });

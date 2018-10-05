@@ -30,19 +30,28 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function students() {
+    public function students() 
+    {
         return $this->hasMany('App\Model\Student');
     }
 
-    public function vehicles() {
+    public function vehicles() 
+    {
         return $this->hasMany('App\Model\Vehicle')->where('active', '=', true);
     }
 
-    public function deletedVehicles() {
+    public function deletedVehicles() 
+    {
         return $this->hasMany('App\Model\Vehicle')->where('active', '=', false);
     }
 
-    public function drivers() {
+    public function allVehicles()
+    {
+        return $this->hasMany('App\Model\Vehicle');
+    }
+
+    public function drivers() 
+    {
         return $this->hasMany('App\Model\Driver');
     }
     

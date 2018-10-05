@@ -14,7 +14,7 @@
                     <li><a href="{{ route('admin.vehicle.index') }}"><i class="fas fa-shuttle-van"></i> VEÍCULOS</a></li>
                     <li><a href="{{ route('admin.student.index') }}"><i class="fas fa-user-graduate"></i> ALUNOS</a></li>
                     <li><a href="{{ route('admin.driver.index') }}"><i class="far fa-id-card"></i> CONDUTORES</a></li>
-                    <li><a href="#"><i class="fas fa-dollar-sign"></i> FINANCEIRO</a></li>
+                    <li><a href="{{ route('admin.billing.index') }}"><i class="fas fa-dollar-sign"></i> FINANCEIRO</a></li>
                     
                     <!-- <li><a>Seja bem vindo(a) {{ Auth::user()->name }}</a></li> -->
                 @endguest
