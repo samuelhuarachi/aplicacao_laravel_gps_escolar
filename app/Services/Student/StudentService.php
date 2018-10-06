@@ -30,6 +30,9 @@ class StudentService
         return Auth::user();
     }
 
+    /*
+    acho que precisa verifica se o turno está ativo
+    */
     public function findVehicle(Student $student)
     {
         $shifts = $student->shifts;

@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Van do Hernani - Transporte escolar Campinas - Faculdade</title>
+        <title>ESCOLAR GPS - Sistema de gps em tempo real, para vans escolares</title>
         
+        <link rel="icon" type="image/png" href="/images/icon.png" />
+
         
         <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">

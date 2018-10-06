@@ -19,11 +19,6 @@ class HomeController extends Controller
         $student = $studentService->current();
         $vehicle = $studentService->findVehicle($student);
 
-        // $reference = $database->getReference('gps/-LMQDNwUboUGHl0t4F5D');
-        // $snapshot = $reference->getSnapshot();
-        // $value = $snapshot->getValue();
-        // dump($value);die;
-
         $token = null;
         if ($vehicle) {
             // da pra cachear esse token
@@ -33,5 +28,4 @@ class HomeController extends Controller
         return view('aluno.home.index', 
                 compact('token', 'vehicle'));
     }
-
 }
