@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Van do Hernani - Transporte escolar Campinas - Faculdade</title>
+        <title>ESCOLAR GPS - Sistema de gps em tempo real, para vans escolares</title>
         
+        <link rel="icon" type="image/png" href="/images/icon.png" />
+
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuiWPnJFhJPafTTA6sta2OqeH4WJHlRAA"></script>
 
         <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet">
@@ -75,6 +77,13 @@
     <body>
 
         @include('base.cliente.menu')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="pull-right"><small>Escolar GPS v1.0.0</small></span>
+                </div>
+            </div>
+        </div>
         
         @yield('content')
 

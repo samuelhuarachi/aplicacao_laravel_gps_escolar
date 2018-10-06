@@ -5,11 +5,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('pagseguro/redirect', ['as' => 'pagseguro.redirect', 
-        'uses' => 'Cliente\Pagseguro@redirect']);
+// Route::get('pagseguro/redirect', ['as' => 'pagseguro.redirect', 
+//         'uses' => 'Cliente\Pagseguro@redirect']);
 
-Route::post('pagseguro/notification', ['as' => 'pagseguro.notification', 
-        'uses' => 'Cliente\Pagseguro@notification']);
+// Route::post('pagseguro/notification', ['as' => 'pagseguro.notification', 
+//         'uses' => 'Cliente\Pagseguro@notification']);
 
 Route::group(['prefix' => '/admin'],
     function() {
@@ -136,6 +136,7 @@ Route::group(['prefix' => '/aluno'],
                         'uses' => 'Auth\StudentLoginController@login']);
 
         Route::post('logout', 'Auth\StudentLoginController@logout')->name('student.logout');
+        Route::get('logout', 'Auth\StudentLoginController@logout')->name('student.logout');
 
         Route::post('password/email', 'Auth\StudentForgotPasswordController@sendResetLinkEmail')->name('student.password.email');
         Route::get('password/reset', 'Auth\StudentForgotPasswordController@showLinkRequestForm')->name('student.password.update');

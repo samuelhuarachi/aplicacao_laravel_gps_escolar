@@ -4,6 +4,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
                 <span class="glyphicon glyphicon-menu-hamburger"></span> MENU
             </button>
+            <a class="navbar-brand" href="#"><img src="/images/bus.png" alt=""></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">

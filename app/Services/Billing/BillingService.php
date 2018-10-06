@@ -142,6 +142,11 @@ class BillingService
             $month--;
         }
 
+        if ($month == 0) {
+            $month = 12;
+            $year--;
+        }
+
         $this->dtoMonthYear->setMonth($month);
         $this->dtoMonthYear->setYear($year);
         
