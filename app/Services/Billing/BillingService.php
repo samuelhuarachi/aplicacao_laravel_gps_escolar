@@ -39,7 +39,7 @@ class BillingService
         if ($finish == null) {
             $finish = $this->getFinishDate($dtoMonthYear);
         }
-        
+
         $user = $this->userService->getCurrent();
         foreach ($user->allVehicles as $vehicle) {
             $this->getCostByVehicle($vehicle, $start, $finish, $costPerDay);
