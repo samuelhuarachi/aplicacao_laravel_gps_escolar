@@ -1,5 +1,12 @@
 <?php
 
+if ($_SERVER['HTTP_CF_VISITOR'] === '{"scheme":"http"}') {
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: https://www.escolargps.com.br' . $_SERVER['REQUEST_URI']);
+    exit;
+}
+
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
