@@ -6,7 +6,7 @@
 
         <title>Van do Hernani - Transporte escolar Campinas - Faculdade</title>
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuiWPnJFhJPafTTA6sta2OqeH4WJHlRAA"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key="></script>
 
         <link href="https://bootswatch.com/3/paper/bootstrap.min.css" rel="stylesheet">
         <style type="text/css">

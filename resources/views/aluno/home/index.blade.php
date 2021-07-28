@@ -49,7 +49,7 @@
     });
 
     var config = {
-        apiKey: "AIzaSyAKsja8iAWYk3GSWNRRwCJKGZSrLRlJaeI",
+        apiKey: "",
         authDomain: "vectoriza-gps.firebaseapp.com",
         databaseURL: "https://vectoriza-gps.firebaseio.com",
     };
